@@ -1,0 +1,119 @@
+/* picbop-site.css — PicBop marketing site. Layers on top of picbop-theme.css.
+   Sticker Arcade brand, web layout. Light cream by default; dark "black craft" strips for contrast. */
+
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--pb-ui);color:var(--pb-ink);background:var(--pb-bg);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+
+.site{
+  background-color:var(--pb-bg);
+  background-image:radial-gradient(var(--pb-dot) 1.4px, transparent 1.5px);
+  background-size:20px 20px;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.wrap--narrow{max-width:760px}
+
+/* ── nav ── */
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);
+  background:color-mix(in srgb, var(--pb-bg) 80%, transparent);border-bottom:1px solid var(--pb-line)}
+.nav .inner{max-width:1080px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-mark{display:inline-flex;align-items:center;gap:9px}
+.nav-mark b{font-family:var(--pb-display);font-weight:600;font-size:23px;letter-spacing:-1px;color:var(--pb-ink)}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:14.5px;font-weight:600;color:var(--pb-ink2)}
+.nav-links a:hover{color:var(--pb-ink)}
+.nav-ios{font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--pb-ink3);text-transform:uppercase;
+  padding:4px 9px;border-radius:100px;box-shadow:inset 0 0 0 1.5px var(--pb-line)}
+
+/* ── App Store button ── */
+.appstore{display:inline-flex;align-items:center;gap:11px;background:var(--pb-ink);color:var(--pb-bg);
+  padding:12px 20px 12px 17px;border-radius:16px;box-shadow:var(--pb-shadow);transition:transform .12s var(--pb-ease),filter .12s}
+.appstore:hover{filter:brightness(1.08)}
+.appstore:active{transform:translateY(1px)}
+.appstore .as-sub{font-size:10.5px;font-weight:600;opacity:.8;line-height:1;letter-spacing:.2px}
+.appstore .as-main{font-family:var(--pb-display);font-weight:600;font-size:18px;line-height:1.05;letter-spacing:-.3px}
+.appstore svg{width:26px;height:26px;flex:0 0 auto}
+
+/* ── sections ── */
+.section{padding:84px 0}
+.section--tight{padding:54px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.5px;white-space:nowrap;
+  text-transform:uppercase;color:var(--pb-pink-ink);background:var(--pb-pink-soft);
+  padding:6px 13px;border-radius:100px;box-shadow:inset 0 0 0 2px var(--pb-stickerline);transform:rotate(-1.5deg)}
+.h-display{font-family:var(--pb-display);font-weight:600;letter-spacing:-1px;line-height:1.03;color:var(--pb-ink);margin:0}
+.lead{font-size:18px;line-height:1.5;color:var(--pb-ink2);margin:0;text-wrap:pretty}
+
+/* ── hero ── */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:64px 0 40px}
+.hero-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:26px}
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+/* ── phone frame (static mock) ── */
+.phone{width:286px;height:600px;border-radius:44px;background:var(--pb-bg);flex:0 0 auto;position:relative;overflow:hidden;
+  box-shadow:inset 0 0 0 9px var(--pb-ink), inset 0 0 0 11px rgba(255,255,255,.12), var(--pb-shadow-lg)}
+.phone .dotbg{position:absolute;inset:11px;border-radius:36px;background-color:var(--pb-bg);
+  background-image:radial-gradient(var(--pb-dot) 1.4px,transparent 1.5px);background-size:18px 18px}
+.phone .notch{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:96px;height:26px;background:var(--pb-ink);border-radius:14px;z-index:6}
+.phone .scr{position:absolute;inset:11px;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;padding:42px 16px 16px}
+.phone-tilt{transform:rotate(2.5deg)}
+.phone-tilt--l{transform:rotate(-2.5deg)}
+
+/* photo tile */
+.ph{position:relative;overflow:hidden;background:linear-gradient(150deg,hsl(var(--h,330) 42% 88%),hsl(calc(var(--h,330) + 40) 38% 82%))}
+[data-theme="dark"] .ph{background:linear-gradient(150deg,hsl(var(--h,330) 30% 32%),hsl(calc(var(--h,330) + 40) 26% 24%))}
+
+/* ── feature grid ── */
+.grid{display:grid;gap:18px}
+.swipe-card{padding:22px;border-radius:var(--pb-r-lg);background:var(--pb-surface);box-shadow:var(--pb-shadow);position:relative}
+.swipe-ic{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 2px var(--pb-stickerline)}
+.feat-title{font-size:18px;font-weight:700;letter-spacing:-.2px;color:var(--pb-ink);margin:14px 0 4px}
+.feat-body{font-size:14.5px;line-height:1.45;color:var(--pb-ink2);margin:0}
+
+/* ── dark strip ── */
+.strip-dark{background:var(--pb-bg);background-image:radial-gradient(var(--pb-dot) 1.4px,transparent 1.5px);background-size:20px 20px}
+
+/* ── pricing ── */
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:720px;margin:0 auto}
+.price-card{padding:28px;border-radius:var(--pb-r-xl);background:var(--pb-surface);box-shadow:var(--pb-shadow)}
+.price-card--pro{box-shadow:inset 0 0 0 2.5px var(--pb-pink), var(--pb-shadow-lg);position:relative}
+.price-num{font-family:var(--pb-ui);font-weight:800;font-size:46px;letter-spacing:-1.5px;color:var(--pb-ink);font-variant-numeric:tabular-nums}
+.price-row{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;color:var(--pb-ink);padding:7px 0}
+.price-row svg{flex:0 0 auto}
+
+/* ── footer ── */
+.footer{border-top:1px solid var(--pb-line);padding:48px 0 40px}
+.footer .cols{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.footer-links{display:flex;flex-direction:column;gap:11px}
+.footer-links a{font-size:14px;font-weight:600;color:var(--pb-ink2)}
+.footer-links a:hover{color:var(--pb-ink)}
+.footer-col-h{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--pb-ink3);margin-bottom:14px}
+.footer-fine{margin-top:36px;font-size:13px;color:var(--pb-ink3);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ── legal / content pages ── */
+.doc{padding:56px 0 80px}
+.doc h1{font-family:var(--pb-ui);font-weight:800;font-size:34px;letter-spacing:-.8px;margin:0 0 6px;color:var(--pb-ink)}
+.doc .updated{font-size:13.5px;font-weight:600;color:var(--pb-ink3);margin:0 0 36px}
+.doc h2{font-family:var(--pb-ui);font-weight:800;font-size:20px;letter-spacing:-.3px;margin:34px 0 10px;color:var(--pb-ink)}
+.doc p,.doc li{font-size:15.5px;line-height:1.6;color:var(--pb-ink2);text-wrap:pretty}
+.doc ul{padding-left:20px;margin:10px 0}
+.doc li{margin:6px 0}
+.doc a.link{color:var(--pb-pink-ink);font-weight:600;border-bottom:1.5px solid var(--pb-pink-soft)}
+.doc strong{color:var(--pb-ink);font-weight:700}
+
+/* ── contact form ── */
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.field label{font-size:13px;font-weight:700;color:var(--pb-ink);letter-spacing:-.1px}
+.field input,.field textarea{font-family:var(--pb-ui);font-size:15px;color:var(--pb-ink);background:var(--pb-surface);
+  border:none;border-radius:var(--pb-r);padding:13px 15px;box-shadow:inset 0 0 0 1.5px var(--pb-line);transition:box-shadow .14s}
+.field input:focus,.field textarea:focus{outline:none;box-shadow:inset 0 0 0 2px var(--pb-pink)}
+.field textarea{resize:vertical;min-height:120px}
+
+/* ── responsive ── */
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:30px}
+  .hero-art{order:-1;display:flex;justify-content:center}
+  .nav-links{display:none}
+  .section{padding:60px 0}
+  .price-grid{grid-template-columns:1fr}
+}
