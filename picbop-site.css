@@ -63,6 +63,21 @@ img{max-width:100%}
 .ph{position:relative;overflow:hidden;background:linear-gradient(150deg,hsl(var(--h,330) 42% 88%),hsl(calc(var(--h,330) + 40) 38% 82%))}
 [data-theme="dark"] .ph{background:linear-gradient(150deg,hsl(var(--h,330) 30% 32%),hsl(calc(var(--h,330) + 40) 26% 24%))}
 
+/* ── real screenshot inside phone frame ── */
+.phone--shot .notch,.phone--shot .dotbg{display:none}
+.phone--shot .scr{padding:0;background:var(--pb-bg)}
+.shot{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ── App Store screenshot strip ── */
+.shots{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:8px 28px 26px;margin:0 -28px;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none}
+.shots::-webkit-scrollbar{display:none}
+.shots-card{flex:0 0 auto;width:250px;border-radius:28px;overflow:hidden;scroll-snap-align:center;
+  box-shadow:var(--pb-shadow-lg);transition:transform .25s var(--pb-ease)}
+.shots-card:hover{transform:translateY(-6px) rotate(-1deg)}
+.shots-card img{display:block;width:100%;height:auto}
+
 /* ── feature grid ── */
 .grid{display:grid;gap:18px}
 .swipe-card{padding:22px;border-radius:var(--pb-r-lg);background:var(--pb-surface);box-shadow:var(--pb-shadow);position:relative}
@@ -109,6 +124,68 @@ img{max-width:100%}
 .field input:focus,.field textarea:focus{outline:none;box-shadow:inset 0 0 0 2px var(--pb-pink)}
 .field textarea{resize:vertical;min-height:120px}
 
+/* ── atmosphere: soft colored glow behind hero ── */
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-1;inset:-22% -18% -8% -14%;pointer-events:none;
+  background:
+    radial-gradient(38% 46% at 80% 26%, color-mix(in srgb,var(--pb-pink) 30%,transparent), transparent 70%),
+    radial-gradient(34% 40% at 16% 64%, color-mix(in srgb,var(--pb-fav) 26%,transparent), transparent 72%),
+    radial-gradient(30% 38% at 62% 92%, color-mix(in srgb,var(--pb-keep) 20%,transparent), transparent 72%);
+  filter:blur(46px);opacity:.75}
+[data-theme="dark"] .hero::before{opacity:.5}
+
+/* ── floating sticker decorations around hero phone ── */
+.hero-art{position:relative}
+.hero-sticker{position:absolute;z-index:3;display:flex;align-items:center;justify-content:center;
+  width:54px;height:54px;border-radius:50%;background:var(--pb-surface);pointer-events:none;
+  box-shadow:inset 0 0 0 2.5px var(--pb-stickerline),var(--pb-shadow-lg)}
+.hero-sticker svg{width:25px;height:25px}
+.hero-sticker--keep{color:var(--pb-keep)}
+.hero-sticker--del{color:var(--pb-del)}
+.hero-sticker--fav{color:var(--pb-fav)}
+.hero-hand{position:absolute;z-index:3;pointer-events:none;font-family:var(--pb-hand);font-weight:700;font-size:25px;line-height:1}
+
+/* ── swoosh underline accent (echoes the wordmark) ── */
+.swoosh{position:relative;white-space:nowrap}
+.swoosh::after{content:"";position:absolute;left:-2px;right:-2px;bottom:-.14em;height:.22em;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none' fill='none'%3E%3Cpath d='M2 8c30 6 86 6 116-4' stroke='%23FF3D8B' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
+
+/* ── nav: lift on scroll ── */
+.nav{transition:box-shadow .2s,background .2s}
+.nav.is-stuck{box-shadow:0 6px 22px rgba(33,28,23,.10);background:color-mix(in srgb, var(--pb-bg) 92%, transparent)}
+
+/* ── hover life ── */
+.swipe-card,.price-card{transition:transform .2s var(--pb-ease),box-shadow .2s}
+.swipe-card:hover{transform:translateY(-5px);box-shadow:var(--pb-shadow-lg)}
+.price-card:hover{transform:translateY(-5px);box-shadow:var(--pb-shadow-lg)}
+.price-card--pro:hover{box-shadow:inset 0 0 0 2.5px var(--pb-pink), var(--pb-shadow-lg)}
+.nav-links a{position:relative;transition:color .15s}
+.footer-links a,.nav-links a{transition:color .15s,transform .15s}
+.footer-links a:hover{transform:translateX(2px)}
+
+/* ── final CTA glow ── */
+.cta-final::before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;
+  background:radial-gradient(60% 80% at 50% -10%, color-mix(in srgb,var(--pb-pink) 16%,transparent), transparent 70%)}
+.cta-final>*{position:relative;z-index:1}
+
+/* ── accessibility: visible focus ── */
+a:focus-visible,button:focus-visible,.appstore:focus-visible,.pb-btn:focus-visible{
+  outline:3px solid var(--pb-pink);outline-offset:3px;border-radius:10px}
+
+/* ── reveal on load / scroll (only when JS present + motion allowed) ── */
+@media (prefers-reduced-motion: no-preference){
+  html.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--pb-ease),transform .7s var(--pb-ease)}
+  html.js .reveal.is-in{opacity:1;transform:none}
+  html.js .reveal-stagger>*{opacity:0;transform:translateY(20px);transition:opacity .6s var(--pb-ease),transform .6s var(--pb-ease)}
+  html.js .reveal-stagger.is-in>*{opacity:1;transform:none}
+  html.js .reveal-stagger.is-in>*:nth-child(1){transition-delay:.04s}
+  html.js .reveal-stagger.is-in>*:nth-child(2){transition-delay:.12s}
+  html.js .reveal-stagger.is-in>*:nth-child(3){transition-delay:.20s}
+  html.js .reveal-stagger.is-in>*:nth-child(4){transition-delay:.28s}
+  html.js .reveal-stagger.is-in>*:nth-child(5){transition-delay:.36s}
+  html.js .reveal-stagger.is-in>*:nth-child(6){transition-delay:.44s}
+}
+
 /* ── responsive ── */
 @media (max-width:860px){
   .hero{grid-template-columns:1fr;gap:30px}
@@ -116,4 +193,5 @@ img{max-width:100%}
   .nav-links{display:none}
   .section{padding:60px 0}
   .price-grid{grid-template-columns:1fr}
+  .hero-sticker,.hero-hand{display:none}
 }
