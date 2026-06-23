@@ -147,8 +147,8 @@ img{max-width:100%}
 
 /* ── swoosh underline accent (echoes the wordmark) ── */
 .swoosh{position:relative;white-space:nowrap}
-.swoosh::after{content:"";position:absolute;left:-2px;right:-2px;bottom:-.14em;height:.22em;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none' fill='none'%3E%3Cpath d='M2 8c30 6 86 6 116-4' stroke='%23FF3D8B' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
+.swoosh::after{content:"";position:absolute;left:-2px;right:-14px;bottom:-.2em;height:.4em;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 26' preserveAspectRatio='none' fill='none'%3E%3Cpath d='M6 15 Q100 29 184 12' stroke='%23FF3D8B' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M167 22 L190 11 L171 2' stroke='%23FF3D8B' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
 
 /* ── nav: lift on scroll ── */
 .nav{transition:box-shadow .2s,background .2s}

@@ -1,0 +1,38 @@
+<svg width="510" height="190" viewBox="0 0 510 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>PicBop Header Mark</title>
+  <desc>Compact transparent lockup for the in-app header: mini card-stack glyph tight against the wordmark with pink swipe underline.</desc>
+  <!-- mini card stack -->
+  <g transform="translate(0 12)">
+    <rect x="14" y="4" width="98" height="124" rx="14" transform="rotate(7 63 66)" fill="#211C17" opacity="0.14"/>
+    <g transform="rotate(-6 55 70)">
+      <rect x="6" y="6" width="98" height="124" rx="14" fill="#FFFFFF" stroke="#211C17" stroke-width="8"/>
+      <rect x="19" y="19" width="72" height="72" rx="8" fill="#FF3D8B" opacity="0.18"/>
+      <circle cx="39" cy="42" r="9" fill="#FF3D8B"/>
+      <path d="M26 86L50 60L63 73L74 62L84 86" stroke="#211C17" stroke-width="7"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path transform="translate(43 100) scale(0.55)" fill="#FF3D8B"
+        d="M0 10C0 2 6 -3 12 -3C17 -3 20 0 22 3C24 0 27 -3 32 -3C38 -3 44 2 44 10C44 21 22 35 22 35C22 35 0 21 0 10Z"/>
+    </g>
+  </g>
+  <!-- wordmark -->
+  <g transform="translate(128 10) scale(0.55)">
+    <g stroke="#211C17" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 18V132"/>
+      <path d="M18 18H56A37 37 0 0 1 56 92H18"/>
+      <path d="M153 68V132"/>
+      <path d="M267.6 77.4A32 32 0 1 0 267.6 122.6"/>
+      <path d="M333 18V132"/>
+      <path d="M333 18H369A26 26 0 0 1 369 70H333"/>
+      <path d="M333 70H373A31 31 0 0 1 373 132H333"/>
+      <circle cx="496" cy="100" r="32"/>
+      <path d="M588 68V200"/>
+      <circle cx="620" cy="100" r="32"/>
+    </g>
+    <circle cx="153" cy="10" r="19" fill="#211C17"/>
+    <!-- pink swipe underline -->
+    <g stroke="#FF3D8B" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M40 252Q335 312 620 242"/>
+      <path d="M588 282L626 240L574 220"/>
+    </g>
+  </g>
+</svg>
